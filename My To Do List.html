@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mandrei00's To Do List (Vanilla)</title>
+    <!--To Do List (Vanilla) created with the help of w3Schools (https://www.w3schools.com/)-->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+<style>
+html {
+    text-align: center;
+    background-color: rgb(208, 212, 206);
+    color: rgb(73, 73, 73);
+    
+}
+
+#myList {
+    list-style-type: none;
+}
+.div {
+    box-sizing: border-box;
+    font-size: 20px;
+    background-color: #4d504e98;
+    padding: 30px 40px;
+    color: rgb(10, 9, 9);
+    text-align: center;
+}
+.addButton {
+    margin: auto;
+    border: none; 
+    font-size: 20px;
+    width: auto;
+}
+.textarea {
+    margin: auto;
+    border: none;
+    font-size: 20px;
+    width: 25%;
+}
+
+
+</style>
+<head>
+    <h1>To Do List Application</h1>
+</head>
+<body>
+    <div class = "div">     
+
+        <input type="text" class = "textarea" id = "InputForm" placeholder="Add some thing to your to do list...">
+        <button onclick="newItem()" class = "addButton">Click here to add item</button>
+    </div>
+    <ol id="myList">
+    </ol>
+<script>
+
+
+function newItem() {
+    var node = document.createElement("LI");
+    var input = document.getElementById("InputForm").value;
+    var textNode = document.createTextNode(input);
+    node.appendChild(textNode);
+    if(input === "") {
+        alert ("You can't add nothing to your to do list!");
+    }
+    else {
+        document.getElementById("myList").appendChild(node);
+    }
+
+    document.getElementById("myList").value = "";
+}
+
+// additional functions
+/*
+var myToDoList = document.getElementsByTagName("LI");
+
+for (var i = 0; i < myToDoList; i++) {
+    var closeButton = document.createElement("SPAN");
+    var text = document.createTextNode("\u00D7");
+    closeButton.className = "close";
+    closeButton.appendChild(text);
+    myToDoList[i].appendChild(closeButton);
+}
+var closeButton = document.getElementsByClassName("close");
+
+for (var i = 0; i < closeButton.length; i++) {
+    closeButton[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+    }
+}
+var checked = document.querySelector('ul');
+// if user clicks on list it will activate mouse event (ev)
+checked.addEventListener('click', function(ev) {
+// conditional statement - checks item
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+*/
+
+
+    </script>
+
+
+</body>
+
+
+</html>
